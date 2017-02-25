@@ -5,12 +5,12 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:test="http://java.sun.com/jsf/composite/test"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions">
 <h:head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link type="text/css" rel="stylesheet" href="css/discipline.css"/>
-    <title>Список людей</title>
+    <title>Абитуриентам - Справочник абитуриента</title>
 </h:head>
 <h:body>
     <h:messages layout="table" globalOnly="true"
@@ -61,7 +61,7 @@
           <p:button id="add" outcome="editPerson" value="Добавить"/>
    -->
 
-        <p:carousel value="#{listDisciplineBean.disciplinesList}" headerText="Responsive" var="discipline"
+        <p:carousel value="#{listDisciplineBean.disciplinesList}" headerText="Семестр I" var="discipline"
                     itemStyle="text-align:center" responsive="true">
             <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid"
                          styleClass="ui-panelgrid-blank">
@@ -69,27 +69,22 @@
                     <!--        <p:graphicImage name="demo/images/car/#{car.brand}.gif"/>  -->
                 </f:facet>
 
-                <h:outputText value="Discipline:"/>
+                <h:outputText value="Дисциплина:"/>
                 <h:outputText value="#{discipline.discipline}"/>
 
-                <h:outputText value="Description"/>
+                <h:outputText value="ФИО преподавателя:"/>
+                <h:outputText value="#{discipline.lastName} #{discipline.firstName} #{discipline.middleName} "/>
+
+                <h:outputText value="Описание дисциплины"/>
                 <h:outputText value="#{discipline.description}"/>
-
-                <h:outputText value="First name:"/>
-                <h:outputText value="#{discipline.firstName}"/>
-
-                <h:outputText value="Last name"/>
-                <h:outputText value="#{discipline.lastName}"/>
-
-                <h:outputText value="Middle name"/>
-                <h:outputText value="#{discipline.middleName}"/>
-
             </p:panelGrid>
 
             <f:facet name="footer">
-                In total there are cars.
+                Всего в первом семестре #{fn:length(listDisciplineBean.disciplinesList)} дисциплин.
             </f:facet>
         </p:carousel>
+
+        <p:button id="add" outcome="editDiscipline" value="Добавить"/>
 
         <p:separator/> <!-- displays a horizantal line; it can be styled with css -->
 

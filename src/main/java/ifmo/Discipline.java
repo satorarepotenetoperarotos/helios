@@ -24,7 +24,7 @@ public class Discipline implements Serializable {
 
     @NotNull
     @Column
-    @Size(min = 1)
+    @Size(min = 1, max = 10000)
     private String description;
 
     @NotNull
@@ -33,7 +33,7 @@ public class Discipline implements Serializable {
     private String firstName;
 
     @Column
-    @Size(min = 0, max = 40)
+    @Size(max = 40)
     private String middleName;
 
     @NotNull

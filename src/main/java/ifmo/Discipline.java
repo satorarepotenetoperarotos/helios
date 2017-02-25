@@ -1,4 +1,4 @@
-package test;
+package ifmo;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

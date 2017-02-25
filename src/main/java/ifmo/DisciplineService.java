@@ -1,4 +1,4 @@
-package test;
+package ifmo;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

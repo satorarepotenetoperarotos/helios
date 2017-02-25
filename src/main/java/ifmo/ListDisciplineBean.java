@@ -1,4 +1,4 @@
-package test;
+package ifmo;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;

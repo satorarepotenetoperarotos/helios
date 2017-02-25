@@ -26,24 +26,28 @@
             </f:facet>
 
             <h:outputLabel for="lastName" value="Фамилия"/>
-            <h:inputText id="lastName" value="#{discipline.lastName}"/>
-            <h:message for="lastName" infoClass="info" errorClass="error"/>
+            <p:inputText id="lastName" value="#{discipline.lastName}"/>
+            <p:message for="lastName" infoClass="info" errorClass="error"/>
 
             <h:outputLabel for="firstName" value="Имя"/>
-            <h:inputText id="firstName" value="#{discipline.firstName}"/>
-            <h:message for="firstName" infoClass="info" errorClass="error"/>
+            <p:inputText id="firstName" value="#{discipline.firstName}"/>
+            <p:message for="firstName" infoClass="info" errorClass="error"/>
 
             <h:outputLabel for="middleName" value="Отчество"/>
-            <h:inputText id="middleName" value="#{discipline.middleName}"/>
-            <h:message for="middleName" infoClass="info" errorClass="error"/>
+            <p:inputText id="middleName" value="#{discipline.middleName}"/>
+            <p:message for="middleName" infoClass="info" errorClass="error"/>
 
             <h:outputLabel for="discipline" value="Ведет дисциплину: "/>
-            <h:inputText id="discipline" value="#{discipline.discipline}"/>
-            <h:message for="discipline" infoClass="info" errorClass="error"/>
+            <p:inputText id="discipline" value="#{discipline.discipline}"/>
+            <p:message for="discipline" infoClass="info" errorClass="error"/>
 
             <h:outputLabel for="description" value="Описание дисциплины"/>
-            <h:inputText id="description" value="#{discipline.description}"/>
-            <h:message for="description" infoClass="info" errorClass="error"/>
+            <!-- counter - id of the output component to display remaining chars. -->
+            <p:inputTextarea id="description" value="#{discipline.description}" counter="display" autoResize="false"
+                             maxlength="30" counterTemplate="осталось символов: {0}"/>
+            <h:outputText id="display"/>
+            <p:message for="description" infoClass="info" errorClass="error"/>
+
         </h:panelGrid>
 
         <p:growl id="growl" life="5000"/>

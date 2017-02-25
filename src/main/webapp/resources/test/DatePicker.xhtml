@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+    <composite:attribute name="className"/>
+</composite:interface>
+
+<composite:implementation>
+    <script type="text/javascript" src="jquery/jquery.js"/>
+    <script type="text/javascript" src="jquery/jquery-ui.js"/>
+    <script type="text/javascript" src="jquery/datepicker-ru.js"/>
+    <link type="text/css" rel="stylesheet" href="jquery/jquery-ui.css"/>
+    <link type="text/css" rel="stylesheet" href="jquery/jquery-ui.structure.css"/>
+    <link type="text/css" rel="stylesheet" href="jquery/jquery-ui.theme.css"/>
+    <script type="text/javascript">
+        window.onload = function () {
+            $("#{'.'.concat(cc.attrs.className)}").datepicker({firstDay: 1, maxDate: 0});
+        }
+    </script>
+</composite:implementation>
+</html>

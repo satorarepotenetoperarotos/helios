@@ -1,0 +1,47 @@
+.info {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.id {
+    width: 20px;
+}
+
+.lastName {
+    width: 120px;
+}
+
+.firstName {
+    width: 120px;
+}
+
+.middleName {
+    width: 120px;
+}
+
+.birthDate {
+    width: 70px;
+}
+
+.controls {
+    width: 35px;
+}
+
+.th {
+    text-align: left;
+}
+
+.odd {
+    background-color: #555555;
+}
+
+.editIcon {
+    margin-left: 5px;
+}
+
+td {
+    white-space: nowrap;
+}

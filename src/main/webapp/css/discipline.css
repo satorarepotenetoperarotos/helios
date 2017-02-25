@@ -45,3 +45,7 @@
 td {
     white-space: nowrap;
 }
+
+body {
+    background-color: #555555;
+}

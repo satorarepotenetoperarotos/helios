@@ -42,6 +42,15 @@
     margin-left: 5px;
 }
 
+.lbl-edit-discipline {
+    color: ghostwhite;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #50a2f5;
+}
+
 td {
     white-space: nowrap;
 }

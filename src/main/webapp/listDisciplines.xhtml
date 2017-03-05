@@ -16,57 +16,16 @@
     <h:messages layout="table" globalOnly="true"
                 infoClass="info" errorClass="error"/>
     <h:form>
-        <!--  <h:dataTable value="#{listDisciplineBean.disciplinesList}" var="discipline"
-                       headerClass="th" rowClasses="odd, even"
-                       columnClasses="lastName, firstName, middleName, discipline, description, controls">
-             <h:column>
-                     <f:facet name="header">№</f:facet>
-                     <h:outputText value="#{discipline.id}"/>
-                 </h:column>
-              <h:column>
-                  <f:facet name="header">Фамилия</f:facet>
-                  <ifmo:TruncatedOutputText value="#{discipline.lastName}" maxLength="15"/>
-              </h:column>
-              <h:column>
-                  <f:facet name="header">Имя</f:facet>
-                  <ifmo:TruncatedOutputText value="#{discipline.firstName}" maxLength="15"/>
-              </h:column>
-              <h:column>
-                  <f:facet name="header">Отчество</f:facet>
-                  <ifmo:TruncatedOutputText value="#{discipline.middleName}" maxLength="15"/>
-              </h:column>
-              <h:column>
-                  <f:facet name="header">Дисциплина</f:facet>
-                  <ifmo:TruncatedOutputText value="#{discipline.discipline}" maxLength="15"/>
-              </h:column>
-              <h:column>
-                  <f:facet name="header">Описание дисциплины</f:facet>
-                  <ifmo:TruncatedOutputText value="#{discipline.description}" maxLength="15"/>
-              </h:column>
-
-              <h:column>
-                  <h:link id="edit" title="Редактировать" outcome="editPerson">
-                      <f:param name="id" value="#{discipline.id}"/>
-                      <h:graphicImage value="icons/edit.png" width="15" styleClass="editIcon"/>
-                  </h:link>
-                  &nbsp;
-                  <h:commandLink id="remove" title="Удалить"
-                                 onclick="return confirm('Удалить запись?')"
-                                 action="#{listDisciplineBean.delete(discipline.id)}">
-                      <h:graphicImage value="icons/remove.png" width="15"/>
-                  </h:commandLink>
-              </h:column>
-          </h:dataTable>
-
-          <p:button id="add" outcome="editPerson" value="Добавить"/>
-   -->
 
         <p:carousel value="#{listDisciplineBean.disciplinesList}" headerText="Семестр I" var="discipline"
                     itemStyle="text-align:center" responsive="true">
             <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid"
                          styleClass="ui-panelgrid-blank">
+
                 <f:facet name="header">
-                    <!--        <p:graphicImage name="demo/images/car/#{car.brand}.gif"/>  -->
+                    <p:graphicImage value="#{disciplineImages.image}">
+                        <f:param name="id" value="#{discipline.id}" />
+                    </p:graphicImage>
                 </f:facet>
 
                 <h:outputText value="Дисциплина:"/>
@@ -80,13 +39,14 @@
             </p:panelGrid>
 
             <f:facet name="footer">
-               Дисциплин в первом семестре: #{fn:length(listDisciplineBean.disciplinesList)}.
+                Дисциплин в первом семестре: #{fn:length(listDisciplineBean.disciplinesList)}.
             </f:facet>
         </p:carousel>
 
         <p:button id="add" outcome="editDiscipline" value="Добавить " styleClass="btn-primary"/>
 
-        <p:separator/> <!-- displays a horizantal line; it can be styled with css -->
+        <!-- displays a horizantal line; it can be styled with css -->
+        <p:separator/>
 
     </h:form>
 </h:body>

@@ -1,0 +1,82 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    background: black;
+    margin: 0;
+    color: #dadbf7;
+}
+
+.main-page {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 10%;
+    text-align: center;
+}
+
+.content {
+    width: 100%;
+    height: 80%;
+}
+
+/* div table content */
+
+.content-header {
+    text-align: center;
+    height: 30%;
+}
+
+.content-table {
+    overflow: hidden;
+    width: 100%;
+    height: 70%;
+    text-align: center;
+}
+
+.content-table-column {
+    border: 1px solid coral;
+    height: 30%;
+    float: left;
+    width: 28%;
+    margin-left: 4%;
+}
+
+.content-table-column-last {
+    margin-right: 3%;
+}
+
+/*Describes the style of div-elements for courses individually*/
+
+.first-course:hover {
+    background: #c9c9c9;
+}
+
+.second-course:hover {
+    background: rgba(230, 230, 230, 0.66);
+}
+
+.third-course:hover {
+    background: rgba(159, 159, 159, 0.66);
+}
+
+.fourth-course:hover {
+    background: rgba(99, 99, 99, 0.66);
+}
+
+.fifth-course:hover {
+    background: rgba(57, 57, 57, 0.66);
+}
+
+.sixth-course:hover {
+    background: rgba(19, 19, 19, 0.66);
+}
+
+.footer {
+    background: black;
+    text-align: center;
+    height: 10%;
+    margin: 0;
+}

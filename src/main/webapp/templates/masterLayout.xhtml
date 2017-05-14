@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+        >
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+    <title>
+        <ui:insert name="windowTitle">
+            Название по-умолчанию.
+        </ui:insert>
+    </title>
+</h:head>
+<h:outputStylesheet library="css" name="main-page.css" target="body"/>
+<!--<h:outputScript library="javascript" name="util.js" target="body"/>-->
+<h:body>
+    <div class="main-page">
+
+        <div class="header">
+            <ui:insert name="header"/>
+        </div>
+
+        <div class="content">
+                <ui:insert name="content"/>
+        </div>
+
+        <div class="footer">
+            <ui:insert name="footer"/>
+        </div>
+
+    </div>
+</h:body>
+</html>

@@ -12,7 +12,6 @@ import java.util.List;
 
 @Named
 @ManagedBean
-@ViewScoped
 @RequestScoped
 public class ListDisciplineBean {
     private List<Discipline> disciplinesList;

@@ -1,9 +1,13 @@
 body, html {
     width: 100%;
     height: 100%;
-    background: black;
+    background: #fdfdfd;
     margin: 0;
-    color: #dadbf7;
+    color: rgb(5, 44, 143);
+}
+
+html {
+    background: #fdfdfd;
 }
 
 .main-page {
@@ -12,9 +16,20 @@ body, html {
 }
 
 .header {
-    width: 100%;
     height: 10%;
-    text-align: center;
+    background: #fdfdfd;;
+    color: rgb(5, 44, 143);
+    text-align:left;
+}
+
+.header h1 {
+    position: relative;
+    top: 18px;
+    left: 80px;
+}
+.header img {
+    float: left;
+    margin-left: 30px;
 }
 
 .content {
@@ -22,7 +37,7 @@ body, html {
     height: 80%;
 }
 
-/* div table content */
+/* div table content.xhtml */
 
 .content-header {
     text-align: center;
@@ -44,6 +59,11 @@ body, html {
     text-align: center;
 }
 
+.content-table-column:hover {
+    background: #ec0b43;
+    color: whitesmoke;
+}
+
 .content-table-column p {
     line-height: 6; /* Aligns labels with text vertically */
     height: 100%;
@@ -55,35 +75,39 @@ body, html {
     margin-right: 3%;
 }
 
-/*Describes the style of div-elements for courses individually*/
+/* Describes the style of div-elements for courses individually */
 
-.first-course:hover {
-    background: #c9c9c9;
-    color: black;
-}
 
-.second-course:hover {
-    background: rgba(230, 230, 230, 0.66);
-}
 
-.third-course:hover {
-    background: rgba(159, 159, 159, 0.66);
-}
+/* unused hovers. do not remove!*/
+/* Used to give individual style to div elements with courses */
+/*.first-course:hover {*/
+    /*background: rgba(230, 230, 230, 0.66);*/
+/*}*/
 
-.fourth-course:hover {
-    background: rgba(99, 99, 99, 0.66);
-}
+/*.second-course:hover {*/
+    /*background: rgba(230, 230, 230, 0.66);*/
+/*}*/
 
-.fifth-course:hover {
-    background: rgba(57, 57, 57, 0.66);
-}
+/*.third-course:hover {*/
+    /*background: rgba(159, 159, 159, 0.66);*/
+/*}*/
 
-.sixth-course:hover {
-    background: rgba(36, 36, 36, 0.66);
-}
+/*.fourth-course:hover {*/
+    /*background: rgba(99, 99, 99, 0.66);*/
+/*}*/
+
+/*.fifth-course:hover {*/
+    /*background: rgba(57, 57, 57, 0.66);*/
+/*}*/
+
+/*.sixth-course:hover {*/
+    /*background: rgba(36, 36, 36, 0.66);*/
+/*}*/
 
 .footer {
-    background: black;
+    background: #242424;
+    color: #c9c9c9;
     text-align: center;
     height: 10%;
     margin: 0;

@@ -112,3 +112,9 @@ html {
     text-align: center;
     height: 5%;
 }
+
+/* define colors of links on page */
+
+a:link {
+    color: #ec0b43!important;
+}

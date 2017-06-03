@@ -1,60 +1,40 @@
-.info {
-    color: green;
+body, html {
+    width: 100%;
+    height: 100%;
+    background: #fdfdfd;
+    margin: 0;
+    color: rgb(5, 44, 143);
 }
 
-.error {
-    color: red;
+html {
+    background: #fdfdfd;
 }
 
-.id {
-    width: 20px;
+.main-page {
+    width: 100%;
+    height: 100%;
 }
 
-.lastName {
-    width: 120px;
+.header {
+    height: 10%;
+    background: #fdfdfd;;
+    color: rgb(5, 44, 143);
+    text-align:left;
 }
 
-.firstName {
-    width: 120px;
+
+.header img {
+    float: left;
+    margin-left: 30px;
 }
 
-.middleName {
-    width: 120px;
+.content {
+    width: 100%;
+    height: 90%;
 }
 
-.birthDate {
-    width: 70px;
-}
+/* define colors of links on page */
 
-.controls {
-    width: 35px;
-}
-
-.th {
-    text-align: left;
-}
-
-.odd {
-    background-color: #555555;
-}
-
-.editIcon {
-    margin-left: 5px;
-}
-
-.lbl-edit-discipline {
-    color: ghostwhite;
-}
-
-.btn-primary {
-    color: white;
-    background-color: #50a2f5;
-}
-
-td {
-    white-space: nowrap;
-}
-
-body {
-    background-color: #555555;
+a:link {
+    color: #ec0b43!important;
 }

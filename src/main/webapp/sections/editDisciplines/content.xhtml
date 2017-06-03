@@ -1,6 +1,84 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <h:messages layout="table" globalOnly="true"
+                infoClass="info" errorClass="error"/>
+    <h:form id="form">
+        <c:set var="discipline" value="#{editDisciplineBean.discipline}"/>
+        <h:panelGrid columns="2" style="width:100%;">
+            <h:panelGrid id="dataPanel" style="width: 50%" columns="2">
+                <f:facet name="header">
+                    <h:outputText value="Панель регистрации" styleClass="header"/>
+                </f:facet>
 
+                <h:outputLabel for="lastName" value="Фамилия" styleClass="lbl-edit-discipline"/>
+                <p:inputText id="lastName" value="#{discipline.lastName}" required="true">
+                    <f:validateLength minimum="4" maximum="20"/>
+                    <p:clientValidator/>
+                </p:inputText>
+                <p:message for="lastName" infoClass="info" errorClass="error"/>
+                <h:outputText value="#{validationView.text}"/>
+
+                <h:outputLabel for="firstName" value="Имя" styleClass="lbl-edit-discipline"/>
+                <p:inputText id="firstName" value="#{discipline.firstName}" required="true">
+                    <f:validateLength minimum="4" maximum="20"/>
+                    <p:clientValidator/>
+                </p:inputText>
+                <p:message for="firstName" infoClass="info" errorClass="error"/>
+                <h:outputText value="#{validationView.text}"/>
+
+                <h:outputLabel for="middleName" value="Отчество" styleClass="lbl-edit-discipline"/>
+                <p:inputText id="middleName" value="#{discipline.middleName}" required="false">
+                    <f:validateLength minimum="4" maximum="20"/>
+                    <p:clientValidator/>
+                </p:inputText>
+                <p:message for="middleName" infoClass="info" errorClass="error"/>
+                <h:outputText value="#{validationView.text}"/>
+
+                <h:outputLabel for="discipline" value="Ведет дисциплину: " styleClass="lbl-edit-discipline"/>
+                <p:inputText id="discipline" value="#{discipline.discipline}" required="true">
+                    <f:validateLength minimum="4" maximum="30"/>
+                    <p:clientValidator/>
+                </p:inputText>
+                <p:message for="discipline" infoClass="info" errorClass="error"/>
+                <h:outputText value="#{validationView.text}"/>
+
+                <h:outputLabel for="description" value="Описание дисциплины: " styleClass="lbl-edit-discipline"/>
+                <p:inputTextarea id="description" value="#{discipline.description}" counter="display" autoResize="false"
+                                 maxlength="30" counterTemplate="осталось символов: {0}"/>
+                <h:outputText id="display"/>
+                <p:message for="description" infoClass="info" errorClass="error"/>
+
+                <h:outputLabel for="description" value="Фото преподавателя: " styleClass="lbl-edit-discipline"/>
+                <p:fileUpload fileUploadListener="#{fileUploadView.file}" mode="advanced"
+                              update="messages" auto="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/>
+                <p:commandButton value="Submit" ajax="false" update="messages" id="save-btn"
+                                 actionListener="#{discipline.uploadImage}"/>
+                <p:growl id="messages" showDetail="true"/>
+
+            </h:panelGrid>
+            <h:panelGrid id="infoPanel" style="width: 50%" columns="2">
+                <h:outputLabel for="lastName1" value="Фамилия" styleClass="lbl-edit-discipline"/>
+                <p:inputText id="lastName1" value="#{discipline.lastName}" required="true">
+                    <f:validateLength minimum="4" maximum="20"/>
+                    <p:clientValidator/>
+                </p:inputText>
+                <p:message for="lastName1" infoClass="info" errorClass="error"/>
+                <h:outputText value="#{validationView.text}"/>
+            </h:panelGrid>
+        </h:panelGrid>
+        <p:growl id="growl" life="5000"/>
+        <p:commandButton value="Добавить" id="add" update="growl" actionListener="#{editDisciplineBean.add}"
+                         rendered="#{editDisciplineBean.newDiscipline}" styleClass="btn-primary"/>
+        <p:commandButton value="Изменить" id="update" update="growl" actionListener="#{editDisciplineBean.update}"
+                         rendered="#{!editDisciplineBean.newDiscipline}" styleClass="btn-primary">
+            <f:param name="id" value="#{discipline.id}"/>
+        </p:commandButton>
+        <p:button id="back" value="К списку" outcome="listDisciplines" styleClass="btn-primary"/>
+
+    </h:form>
 
 </ui:composition>

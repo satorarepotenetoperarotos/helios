@@ -1,15 +1,9 @@
 package ifmo;
 
-import org.primefaces.model.DefaultStreamedContent;
-import org.primefaces.model.StreamedContent;
 import org.primefaces.model.UploadedFile;
-
-import javax.faces.context.FacesContext;
-import javax.faces.event.PhaseId;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.io.ByteArrayInputStream;
 import java.io.Serializable;
 
 @NamedQueries({
@@ -51,6 +45,19 @@ public class Discipline implements Serializable {
     @NotNull
     @Column
     private byte[] image;
+
+    @NotNull
+    @Column
+    @Size(min = 1, max = 6)
+    private int courseNumber;
+
+    public int getCourseNumber() {
+        return courseNumber;
+    }
+
+    public void setCourseNumber(int courseNumber) {
+        this.courseNumber = courseNumber;
+    }
 
     public void uploadImage() {
         image = FileUploadView.getFile().getContents();

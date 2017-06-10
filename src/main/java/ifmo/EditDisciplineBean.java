@@ -23,7 +23,7 @@ public class EditDisciplineBean {
     public void init() {
         String stringId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("id");
         discipline = (stringId != null) ? disciplineService.findById(Long.valueOf(stringId)) : new Discipline();
-        discipline.setCourseNumber(1); // set initial state of course number spinner
+        discipline.setCourseNumber(Integer.valueOf(1)); // set initial state of course number spinner
     }
 
     public boolean isNewDiscipline() {

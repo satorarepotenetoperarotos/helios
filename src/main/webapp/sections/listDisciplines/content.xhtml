@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:c="http://java.sun.com/jsp/jstl/core"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+    <h:messages layout="table" globalOnly="true"
+                infoClass="info" errorClass="error"/>
+    <h:form>
+
+        <p:carousel value="#{listDisciplineBean.disciplinesList}" headerText="Семестр I" var="discipline"
+                    itemStyle="text-align:center" responsive="true">
+            <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid"
+                         styleClass="ui-panelgrid-blank">
+
+                <f:facet name="header">
+                    <p:graphicImage value="#{disciplineImages.image}">
+                        <f:param name="id" value="#{discipline.id}"/>
+                    </p:graphicImage>
+                </f:facet>
+
+                <h:outputText value="Дисциплина:"/>
+                <h:outputText value="#{discipline.discipline}"/>
+
+                <h:outputText value="ФИО преподавателя:"/>
+                <h:outputText value="#{discipline.lastName} #{discipline.firstName} #{discipline.middleName} "/>
+
+                <h:outputText value="Описание дисциплины"/>
+                <h:outputText value="#{discipline.description}"/>
+            </p:panelGrid>
+
+            <f:facet name="footer">
+                Дисциплин в первом семестре: #{fn:length(listDisciplineBean.disciplinesList)}.
+            </f:facet>
+
+        </p:carousel>
+
+        <!--<p:button id="add" outcome="/editDiscipline" value="Добавить " styleClass="btn-primary"/>-->
+
+        <!-- just displays a horizantal line; it can be styled with css -->
+        <p:separator/>
+
+    </h:form>
+
+</ui:composition>

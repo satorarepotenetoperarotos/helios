@@ -46,16 +46,15 @@ public class Discipline implements Serializable {
     @Column
     private byte[] image;
 
-    @NotNull
     @Column
-    @Size(min = 1, max = 6)
-    private int courseNumber;
+    @NotNull
+    private Integer courseNumber;
 
-    public int getCourseNumber() {
+    public Integer getCourseNumber() {
         return courseNumber;
     }
 
-    public void setCourseNumber(int courseNumber) {
+    public void setCourseNumber(Integer courseNumber) {
         this.courseNumber = courseNumber;
     }
 

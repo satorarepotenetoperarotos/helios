@@ -1,55 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                template="/templates/listDisciplinesLayout.xhtml">
 
-<html lang="ru"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="windowTitle">
+        Список дисциплин
+    </ui:define>
 
-<h:head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <link type="text/css" rel="stylesheet" href="../resources/css/edit-disciplines.css"/>
-    <title>Абитуриентам - Справочник абитуриента</title>
-</h:head>
-<h:body>
+    <ui:define name="header">
+        <ui:include src="/sections/listDisciplines/header.xhtml"/>
+    </ui:define>
 
-    <h:messages layout="table" globalOnly="true"
-                infoClass="info" errorClass="error"/>
-    <h:form>
+    <ui:define name="content">
+        <ui:include src="/sections/listDisciplines/content.xhtml"/>
+    </ui:define>
 
-        <p:carousel value="#{listDisciplineBean.disciplinesList}" headerText="Семестр I" var="discipline"
-                    itemStyle="text-align:center" responsive="true">
-            <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid"
-                         styleClass="ui-panelgrid-blank">
+    <ui:define name="footer">
+        <ui:include src="/sections/common/footer.xhtml"/>
+    </ui:define>
 
-                <f:facet name="header">
-                    <p:graphicImage value="#{disciplineImages.image}">
-                        <f:param name="id" value="#{discipline.id}"/>
-                    </p:graphicImage>
-                </f:facet>
-
-                <h:outputText value="Дисциплина:"/>
-                <h:outputText value="#{discipline.discipline}"/>
-
-                <h:outputText value="ФИО преподавателя:"/>
-                <h:outputText value="#{discipline.lastName} #{discipline.firstName} #{discipline.middleName} "/>
-
-                <h:outputText value="Описание дисциплины"/>
-                <h:outputText value="#{discipline.description}"/>
-            </p:panelGrid>
-
-            <f:facet name="footer">
-                Дисциплин в первом семестре: #{fn:length(listDisciplineBean.disciplinesList)}.
-            </f:facet>
-        </p:carousel>
-
-        <p:button id="add" outcome="editDiscipline" value="Добавить " styleClass="btn-primary"/>
-
-        <!-- displays a horizantal line; it can be styled with css -->
-        <p:separator/>
-    </h:form>
-</h:body>
-</html>
+</ui:composition>
